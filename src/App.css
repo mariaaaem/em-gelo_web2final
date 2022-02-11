@@ -86,6 +86,9 @@ section .form {
 .profile_container {
   display: flex;
   align-items: center;
+  background: linear-gradient(to right, rgba(148,187,233,1) 0%, rgba(238,174,202,1) 100%);
+  color: #000;
+  padding: 10%
 }
 .img_container {
   position: relative;

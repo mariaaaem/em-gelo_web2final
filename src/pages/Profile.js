@@ -50,7 +50,7 @@ const Profile = () => {
       };
       uploadImg();
     }
-  }, [img, user.avatarPath]);
+  }, [img]);
 
   const deleteImage = async () => {
     try {
