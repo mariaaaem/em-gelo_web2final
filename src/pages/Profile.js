@@ -12,6 +12,8 @@ import { getDoc, doc, updateDoc } from "firebase/firestore";
 import Delete from "../components/svg/Delete";
 import { useHistory } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import { signOut } from "firebase/auth";
+
 
 const Profile = () => {
   const [img, setImg] = useState("");
@@ -68,6 +70,13 @@ const Profile = () => {
       console.log(err.message);
     }
   };
+  const handleSignout = async () => {
+    await updateDoc(doc(db, "users", auth.currentUser.uid), {
+      isOnline: false,
+    });
+    await signOut(auth);
+    history.replace("/login");
+  };
   return user ? (
     <section>
       <Helmet>
@@ -100,6 +109,9 @@ const Profile = () => {
           <p>Joined on: {user.createdAt.toDate().toDateString()}</p>
           <h1>{user.name}</h1>
           <p>{user.email}</p>
+          <button className="btn" onClick={handleSignout} style={{display: 'flex', margin:'auto'}}>
+              Logout
+            </button>
         </div>
       </div>
     </section >
