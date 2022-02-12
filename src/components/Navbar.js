@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { Box } from '@mui/material'
 import { auth, db } from "../firebase";
 import { signOut } from "firebase/auth";
 import { updateDoc, doc } from "firebase/firestore";
@@ -26,13 +27,13 @@ const Navbar = () => {
       </h3>
       <div>
         {user ? (
-          <>
-            <ModeSwitch />
+          <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
             <Link to="/profile">Profile</Link>
+            <ModeSwitch />
             <button className="btn" onClick={handleSignout}>
               Logout
             </button>
-          </>
+          </Box>
         ) : (
           <>
             <Link to="/register">Register</Link>
