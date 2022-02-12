@@ -64,7 +64,7 @@ export default function ModeSwitch() {
             <FormControlLabel
                 control={<MaterialUISwitch checked={ui.isDarkMode} />}
                 onClick={togglebtn}
-                label="Theme"
+                label=""
             />
         </FormGroup>
     )
