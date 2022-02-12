@@ -17,6 +17,7 @@ const MessageForm = ({ handleSubmit, text, setText, setImg }) => {
     <div style={{ diplay: 'flex', flexDirection: "row", alignSelf: "flex-start", backgroundColor: 'blue' }}>
       {preview === '' ? <div></div> :
         <div style={{ position: 'absolute', height: '20%', width: '20%', bottom: -85, left: 200 }}>
+
           <img src={preview} alt='Preview' width={'30%'} />
         </div>
       }
@@ -40,7 +41,7 @@ const MessageForm = ({ handleSubmit, text, setText, setImg }) => {
           />
         </div>
         <div>
-          <button className="btn">Send</button>
+          <button className="btn" onClick={(e) => { setpreview('') }}>Send</button>
         </div>
       </form >
     </div>
