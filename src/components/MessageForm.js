@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Camera from "./svg/Camera";
+import { Box, IconButton } from "@mui/material"
+import CloseIcon from '@mui/icons-material/Close';
 
 const MessageForm = ({ handleSubmit, text, setText, setImg }) => {
   const [preview, setpreview] = useState('')
@@ -14,17 +16,21 @@ const MessageForm = ({ handleSubmit, text, setText, setImg }) => {
     reader.readAsDataURL(e.target.files[0])
   };
   return (
-    <div style={{ diplay: 'flex', flexDirection: "row", alignSelf: "flex-start", backgroundColor: 'blue' }}>
-      {preview === '' ? <div></div> :
-        <div style={{ position: 'absolute', height: '20%', width: '20%', bottom: -85, left: 200 }}>
-
-          <img src={preview} alt='Preview' width={'30%'} />
-        </div>
+    <div style={{ diplay: 'flex', flexDirection: { lg: "row", xs: 'column' } }}>
+      {preview === '' ? <Box sx={{ display: 'none' }} /> :
+        <Box sx={{ position: 'absolute', width: { lg: '74vw', xs: '84vw' }, maxHeight: { lg: '20vh', xs: '15vh' }, bottom: 45, left: 0, background: 'linear-gradient(to right, #eb57a7,#f5b9b9, #41c2de)', overflow: 'hidden' }}>
+          <IconButton onClick={(e) => { setpreview(''); setImg("") }} sx={{ position: 'absolute', color: 'red' }}>
+            <CloseIcon />
+          </IconButton>
+          <Box component='img' src={preview} alt='Preview' sx={{ width: { lg: '10%', xs: '30%' } }} />
+        </Box>
       }
       <form className="message_form" onSubmit={handleSubmit}>
-        <label htmlFor="img">
+        {preview === '' ? <label htmlFor="img">
           <Camera />
-        </label>
+        </label> : <Box sx={{ display: 'none' }} />
+        }
+
         <input
           onChange={imageHandler}
           type="file"
@@ -44,7 +50,7 @@ const MessageForm = ({ handleSubmit, text, setText, setImg }) => {
           <button className="btn" onClick={(e) => { setpreview('') }}>Send</button>
         </div>
       </form >
-    </div>
+    </div >
   );
 };
 

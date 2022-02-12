@@ -211,7 +211,7 @@ section .form {
   margin-top: -10px;
 }
 .messages {
-  height: calc(100vh - 250px);
+  height: calc(100vh - 200px);
   overflow-y: auto;
   border-bottom: 1px solid var(--color-6);
 }
