@@ -5,6 +5,7 @@ import { signOut } from "firebase/auth";
 import { updateDoc, doc } from "firebase/firestore";
 import { AuthContext } from "../context/auth";
 import { useHistory } from "react-router-dom";
+import ModeSwitch from "./ModeSwitch";
 
 const Navbar = () => {
   const history = useHistory();
@@ -26,6 +27,7 @@ const Navbar = () => {
       <div>
         {user ? (
           <>
+            <ModeSwitch />
             <Link to="/profile">Profile</Link>
             <button className="btn" onClick={handleSignout}>
               Logout

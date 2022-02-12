@@ -28,7 +28,8 @@ const MessageForm = ({ handleSubmit, text, setText, setImg }) => {
       <form className="message_form" onSubmit={handleSubmit}>
         {preview === '' ? <label htmlFor="img">
           <Camera />
-        </label> : <Box sx={{ display: 'none' }} />
+        </label>
+          : <Box sx={{ display: 'none' }} />
         }
 
         <input
