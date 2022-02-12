@@ -19,8 +19,9 @@ const Navbar = () => {
   };
   return (
     <nav>
+      <Link to="/"><img src="messenger.png" alt="Girl in a jacket" width="50" height="50"></img></Link>
       <h3>
-        <Link to="/">Messenger</Link>
+        Messenger
       </h3>
       <div>
         {user ? (
