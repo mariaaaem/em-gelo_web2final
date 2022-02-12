@@ -15,7 +15,9 @@ import PrivateRoute from "./components/PrivateRoute";
 import { Box } from '@mui/material'
 const classes = {
   bg: {
-    backgroundColor: (theme) => theme.palette.background.default
+    backgroundColor: (theme) => theme.palette.background.default,
+    color: (theme) => theme.palette.primary.text,
+    minHeight: '100vh'
   }
 }
 function App() {

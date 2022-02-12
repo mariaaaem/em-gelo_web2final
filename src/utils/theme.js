@@ -5,6 +5,7 @@ const theme = (isDarkMode) => ({
             //main: '#639BC8',
             main: '#639BC8',
             contrastText: 'rgba(0, 0, 0, 0.87)',
+            text: '#6E85B2',
         },
         secondary: {
             main: '#EC884D',
