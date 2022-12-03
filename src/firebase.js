@@ -8,14 +8,12 @@ import { getStorage } from "firebase/storage";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDVD3Gmb1eSNxnehEA_xHIR7X-zCUfmsz8",
-  authDomain: "em-gelo-web2final.firebaseapp.com",
-  projectId: "em-gelo-web2final",
-  databaseURL: "http://em-gelo-web2final.firebaseoi.com",
-  storageBucket: "em-gelo-web2final.appspot.com",
-  messagingSenderId: "503653300281",
-  appId: "1:503653300281:web:167856dfcaa200da9a35e8",
-  measurementId: "G-HHNDVKZTH4"
+  apiKey: "AIzaSyAZFpoVtEQ4wetz-3kP7SQixbr6aXasze8",
+  authDomain: "smsapp-880bf.firebaseapp.com",
+  projectId: "smsapp-880bf",
+  storageBucket: "smsapp-880bf.appspot.com",
+  messagingSenderId: "419066010625",
+  appId: "1:419066010625:web:ddd9f8f132c1ad97183400"
 };
 
 // Initialize Firebase
